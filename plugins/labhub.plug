@@ -1,0 +1,9 @@
+[Core]
+name = LabHub
+module = labhub
+
+[Documentation]
+description = GitHub utilities
+
+[Python]
+version = 3

@@ -1,0 +1,9 @@
+[Core]
+module = hello_world
+name = hello_world
+
+[Documentation]
+description = The welcome message for new community members.
+
+[Python]
+version = 3
