@@ -1,6 +1,7 @@
+import github
+
 from errbot import BotPlugin, re_botcmd
 from errbot.templating import tenv
-from github import Github
 from utils.mixin import DefaultConfigMixin
 
 
@@ -17,8 +18,9 @@ class LabHub(DefaultConfigMixin, BotPlugin):
     def activate(self):
         super().activate()
         teams = dict()
+        gh_org = None
         try:
-            gh = Github(self.config['GH_TOKEN'])
+            gh = github.Github(self.config['GH_TOKEN'])
             assert gh is not None
         except AssertionError:
             self.log.error('Cannot create github object, check GH_TOKEN')
@@ -58,6 +60,7 @@ class LabHub(DefaultConfigMixin, BotPlugin):
         members = [mem.username for mem in msg.frm.room.occupants]
         return invitee in members
 
+    # Ignore LineLengthBear, PycodestyleBear
     @re_botcmd(pattern=r'^(?:(?:welcome)|(?:inv)|(?:invite))\s+@?([\w-]+)(?:\s+(?:to)\s+(\w+))?$',
                re_cmd_name_help='invite ([@]<username> [to <team>]|me)')
     def invite_cmd(self, msg, match):
