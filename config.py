@@ -49,7 +49,7 @@ if not os.path.isdir(BOT_DATA_DIR):
     # create an empty data directory
     os.mkdir(BOT_DATA_DIR)
 
-BOT_EXTRA_PLUGIN_DIR = BOT_ROOT
+BOT_EXTRA_PLUGIN_DIR = os.path.join(BOT_ROOT, 'plugins')
 
 BOT_LOG_FILE = os.path.join(BOT_ROOT, 'errbot.log')
 BOT_LOG_LEVEL = logging.DEBUG

@@ -1,0 +1,44 @@
+[all]
+files = *.py, plugins/**.py, tests/**.py
+max_line_length = 80
+use_spaces = True
+
+[all.whitespace]
+use_spaces = True
+bears = SpaceConsistencyBear
+default_actions = *: ApplyPatchAction
+
+[all.python]
+language = Python
+bears = QuotesBear
+preferred_quotation = '
+default_actions = *: ApplyPatchAction
+
+bears += KeywordBear
+keywords = pdb
+bears += PyUnusedCodeBear
+
+[all.autopep8]
+bears = PEP8Bear, PycodestyleBear
+default_actions = PEP8Bear: ApplyPatchAction
+
+[all.linelength]
+bears = LineLengthBear
+
+[all.links]
+bears = InvalidLinkBear
+link_ignore_regex = (example|test|{|})
+
+[jinja2]
+files = plugins/templates/*.jinja2.md
+bears = Jinja2Bear
+default_actions = Jinja2Bear: ApplyPatchAction
+
+[commit]
+bears = GitCommitBear
+shortlog_regex = ([^:]*|[^:]+[^ ]: [A-Z0-9*].*)
+shortlog_trailing_period = False
+body_close_issue = True
+body_close_issue_full_url = True
+body_close_issue_on_last_line = True
+body_enforce_issue_reference = False
