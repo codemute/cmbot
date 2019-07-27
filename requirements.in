@@ -2,5 +2,3 @@ errbot
 PyGithub
 pytest-cov
 codecov
-git+https://github.com/coala/coala#egg=coala
-git+https://github.com/coala/coala-bears#egg=coala-bears
