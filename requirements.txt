@@ -4,141 +4,55 @@
 #
 #    pip-compile
 #
-aenum==2.0.10
 ansi==0.1.3               # via errbot
-ansicolor==0.2.6          # via vim-vint
-apertium-lint==0.29
-appdirs==1.4.3            # via coala, coala-utils
 asn1crypto==0.24.0        # via cryptography
-astroid==1.5.3            # via pylint
 atomicwrites==1.3.0       # via pytest
-attrs==19.1.0             # via jsonschema, pytest
-autoflake==0.7
-autopep8==1.4.4
-babel==2.7.0              # via bashate
-bandit==1.6.2
-bashate==0.5.1
+attrs==19.1.0             # via pytest
 beautifulsoup4==4.8.0     # via webtest
-bitstring==3.1.6          # via httpolice
-brotlipy==0.7.0           # via httpolice
 certifi==2019.6.16        # via dulwich, requests
-cffi==1.12.3              # via brotlipy, cryptography
-chardet==3.0.4            # via requests, vim-vint
-click==7.0                # via dennis, flask, proselint, safety
-cmakelint==1.4.1
-git+https://github.com/coala/coala-bears#egg=coala-bears
-coala-utils==0.6.7        # via coala, dependency-management
-coala==0.11.0
+cffi==1.12.3              # via cryptography
+chardet==3.0.4            # via requests
+click==7.0                # via flask
 codecov==2.0.15
-colorama==0.3.9           # via pyprint, radon
-colorlog==2.10.0          # via coala, errbot
+colorlog==2.10.0          # via errbot
 coverage==4.5.3           # via codecov, pytest-cov
-cppclean==0.12
-cpplint==1.4.4
 cryptography==2.7         # via pyopenssl
 daemonize==2.5.0          # via errbot
 dataclasses==0.6          # via errbot
-ddt==1.2.1                # via gitpython
-decorator==4.4.0          # via traitlets
-defusedxml==0.6.0         # via httpolice
-dennis==0.9
-dependency-management==0.4.0  # via coala
 deprecated==1.2.6         # via pygithub
-docopt==0.6.2             # via html-linter, template-remover
-docutils-ast-writer==0.1.2
-docutils==0.15.1.post1    # via docutils-ast-writer, pyroma, restructuredtext-lint, rstcheck
-dominate==2.3.5           # via httpolice
-dparse==0.4.1             # via safety
 dulwich==0.19.11          # via errbot
-eradicate==0.1.6
 errbot==6.1.1
 flask==1.1.1              # via errbot
-future==0.17.1            # via proselint
-git-url-parse==1.2.2
-gitdb2==2.0.5             # via gitpython
-gitdb==0.6.4              # via gitpython
-gitpython==2.1.12         # via bandit
-guess-language-spirit==0.5.3
-html-linter==0.4.0
-httpolice==0.5.2
 idna==2.8                 # via requests
 importlib-metadata==0.18  # via pluggy, pytest
-ipython-genutils==0.2.0   # via nbformat, traitlets
-isort==4.3.21             # via pylint
 itsdangerous==1.1.0       # via flask
 jinja2==2.10.1            # via errbot, flask
-jsonschema==3.0.1         # via nbformat
-jupyter-core==4.5.0       # via nbformat
-lazy-object-proxy==1.4.1  # via astroid
-libclang-py3==3.4.0       # via coala
-lxml==4.3.4               # via httpolice
-mando==0.3.3              # via radon
 markdown==2.6.11          # via errbot
 markupsafe==1.1.1         # via jinja2
-mccabe==0.6.1             # via pylint
-memento-client==0.6.1
 more-itertools==7.2.0     # via pytest
-munkres==1.1.2
-mypy==0.590
-nbformat==4.4.0
-nltk==3.4.4
-packaging==19.0           # via dparse, pytest, safety
-pathspec==0.5.9           # via yamllint
-pbr==5.4.1                # via bashate, git-url-parse, stevedore
+packaging==19.0           # via pytest
 pluggy==0.12.0            # via pytest
-polib==1.1.0              # via dennis
-proselint==0.7.0
 py==1.8.0                 # via pytest
-pycodestyle==2.5.0        # via autopep8
 pycparser==2.19           # via cffi
-pydocstyle==2.1.1
-pyflakes==2.0.0           # via autoflake
 pygithub==1.43.8
 pygments-markdown-lexer==0.1.0.dev39  # via errbot
-pygments==2.4.2           # via coala, errbot, pygments-markdown-lexer
+pygments==2.4.2           # via errbot, pygments-markdown-lexer
 pyjwt==1.7.1              # via pygithub
-pylint==1.7.6
 pyopenssl==19.0.0         # via errbot
 pyparsing==2.4.1.1        # via packaging
-pyprint==0.2.6            # via coala, coala-utils
-pyroma==2.2
-pyrsistent==0.15.3        # via jsonschema
 pytest-cov==2.7.1
 pytest==5.0.1             # via pytest-cov
-pytz==2019.1              # via babel
-pyyaml==3.13              # via bandit, dparse, vim-vint, yamllint
-radon==1.4.0
-requests==2.22.0          # via coala, codecov, errbot, memento-client, pygithub, safety
-restructuredtext-lint==1.3.0
-rstcheck==3.3.1
-safety==1.8.5
-sarge==0.1.5.post0        # via dependency-management
-scspell3k==2.2
-singledispatch==3.4.0.3   # via httpolice
-six==1.12.0               # via astroid, bandit, cryptography, dparse, httpolice, jsonschema, nltk, packaging, proselint, pydocstyle, pylint, pyopenssl, pyrsistent, singledispatch, stevedore, traitlets, webtest
-smmap2==2.0.5             # via gitdb2
-smmap==0.9.0              # via gitdb
-snowballstemmer==1.9.0    # via pydocstyle
+requests==2.22.0          # via codecov, errbot, pygithub
+six==1.12.0               # via cryptography, packaging, pyopenssl, webtest
 soupsieve==1.9.2          # via beautifulsoup4
-sqlparse==0.2.4
-stevedore==1.30.1         # via bandit
-template-remover==0.1.9   # via html-linter
-termcolor==1.1.0          # via pyprint
-traitlets==4.3.2          # via jupyter-core, nbformat
-typed-ast==1.1.2          # via mypy
-unidiff==0.5.5            # via coala
 urllib3==1.25.3           # via dulwich, requests
-vim-vint==0.3.21
-vulture==0.25
 waitress==1.3.0           # via webtest
 wcwidth==0.1.7            # via pytest
 webob==1.8.5              # via webtest
 webtest==2.0.33           # via errbot
 werkzeug==0.15.5          # via flask
-wrapt==1.11.2             # via astroid, deprecated
-yamllint==1.12.1
-yapf==0.28.0
+wrapt==1.11.2             # via deprecated
 zipp==0.5.2               # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
-# setuptools==41.0.1        # via coala, errbot, jsonschema, pyroma, safety
+# setuptools==41.0.1        # via errbot
