@@ -1,3 +1,4 @@
+import queue
 import github
 
 from errbot.backends.base import Message
@@ -56,8 +57,16 @@ class TestLabHub(LabHubTestCase):
 
         mock_dict['is_room_member'].return_value = True
 
+        mock_team_maintainers.has_in_members.return_value = False
+
+        # invite me
+        testbot.assertCommand('!invite me',
+                              'To get started, please follow our [docs]')
+        # once invited it should timeout the next time
+        with self.assertRaises(queue.Empty):
+            testbot.assertCommand('!invite me', 'To get started')
+
         # invite by maintainer
-        mock_team_contributors.has_in_members.return_value = True
         mock_team_maintainers.has_in_members.return_value = True
 
         testbot.assertCommand(
@@ -69,18 +78,16 @@ class TestLabHub(LabHubTestCase):
         # invite by contributor
         mock_team_maintainers.has_in_members.return_value = False
 
-        testbot.assertCommand('!invite abhi to contributors',
-                              'To get started, please follow our [docs]')
         testbot.assertCommand('!invite abhi to maintainers',
                               ':poop:')
 
         # invite by newcomer
         mock_team_contributors.has_in_members.return_value = False
 
-        testbot.assertCommand('!invite abhi to contributors',
-                              'To get started, please follow our [docs]')
         testbot.assertCommand('!invite abhi to maintainers',
                               ':poop:')
+        testbot.assertCommand('!invite abhi to contributors',
+                              'To get started, please follow our [docs]')
 
         # invalid team
         testbot.assertCommand('!invite abhi to something',

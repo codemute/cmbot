@@ -3,3 +3,4 @@ errbot.log
 data
 .coverage
 prof/
+.pytest_cache
