@@ -32,6 +32,7 @@ class LabHub(DefaultConfigMixin, BotPlugin):
         self._gh_org = gh_org
         self._teams = teams
         self._gh = gh
+        self.invited_users = set()
 
     @property
     def GH_ORG_NAME(self):
@@ -61,7 +62,7 @@ class LabHub(DefaultConfigMixin, BotPlugin):
         return invitee in members
 
     # Ignore LineLengthBear, PycodestyleBear
-    @re_botcmd(pattern=r'^(?:(?:welcome)|(?:inv)|(?:invite))\s+@?([\w-]+)(?:\s+(?:to)\s+(\w+))?$',
+    @re_botcmd(pattern=r'^(?:(?:welcome)|(?:inv)|(?:invite))\s+(?:(?:@?([\w-]+)(?:\s+(?:to)\s+(\w+))?)|(me))$',
                re_cmd_name_help='invite ([@]<username> [to <team>]|me)')
     def invite_cmd(self, msg, match):
         """
@@ -90,8 +91,15 @@ class LabHub(DefaultConfigMixin, BotPlugin):
         def invite(invitee, team):
             self.team_mapping()[team].add_membership(self._gh.get_user(invitee))
 
+        if invitee == 'me':
+            team = 'contributors'
+            invitee = inviter
+
         if not self.is_room_member(invitee, msg):
             yield '@{} is not a member of this room.'.format(invitee)
+            return
+
+        if invitee in self.invited_users:
             return
 
         if is_maintainer:
@@ -108,6 +116,7 @@ class LabHub(DefaultConfigMixin, BotPlugin):
             ).render(
                 target=invitee,
             )
+            self.invited_users.add(invitee)
         else:
             yield tenv().get_template(
                 'not-eligible-invite.jinja2.md'
