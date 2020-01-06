@@ -45,7 +45,7 @@ requests==2.22.0          # via codecov, errbot, pygithub
 six==1.12.0               # via cryptography, packaging, pyopenssl, webtest
 soupsieve==1.9.2          # via beautifulsoup4
 urllib3==1.25.3           # via dulwich, requests
-waitress==1.4.0           # via webtest
+waitress==1.4.2           # via webtest
 wcwidth==0.1.7            # via pytest
 webob==1.8.5              # via webtest
 webtest==2.0.33           # via errbot
