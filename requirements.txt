@@ -4,54 +4,121 @@
 #
 #    pip-compile
 #
-ansi==0.1.3               # via errbot
-asn1crypto==0.24.0        # via cryptography
-atomicwrites==1.3.0       # via pytest
-attrs==19.1.0             # via pytest
-beautifulsoup4==4.8.0     # via webtest
-certifi==2019.6.16        # via dulwich, requests
-cffi==1.12.3              # via cryptography
-chardet==3.0.4            # via requests
-click==7.0                # via flask
+ansi==0.1.3
+    # via errbot
+asn1crypto==0.24.0
+    # via cryptography
+atomicwrites==1.3.0
+    # via pytest
+attrs==19.1.0
+    # via pytest
+beautifulsoup4==4.8.0
+    # via webtest
+certifi==2019.6.16
+    # via
+    #   dulwich
+    #   requests
+cffi==1.12.3
+    # via cryptography
+chardet==3.0.4
+    # via requests
+click==7.0
+    # via flask
 codecov==2.0.15
-colorlog==2.10.0          # via errbot
-coverage==4.5.3           # via codecov, pytest-cov
-cryptography==2.7         # via pyopenssl
-daemonize==2.5.0          # via errbot
-deprecated==1.2.6         # via pygithub
-dulwich==0.19.11          # via errbot
+    # via -r requirements.in
+colorlog==2.10.0
+    # via errbot
+coverage==4.5.3
+    # via
+    #   codecov
+    #   pytest-cov
+cryptography==2.7
+    # via pyopenssl
+daemonize==2.5.0
+    # via errbot
+deprecated==1.2.6
+    # via pygithub
+dulwich==0.19.11
+    # via errbot
 errbot==6.1.1
-flask==1.1.1              # via errbot
-idna==2.8                 # via requests
-importlib-metadata==0.18  # via pluggy, pytest
-itsdangerous==1.1.0       # via flask
-jinja2==2.10.1            # via errbot, flask
-markdown==2.6.11          # via errbot
-markupsafe==1.1.1         # via jinja2
-more-itertools==7.2.0     # via pytest
-packaging==19.0           # via pytest
-pluggy==0.12.0            # via pytest
-py==1.8.0                 # via pytest
-pycparser==2.19           # via cffi
+    # via -r requirements.in
+flask==1.1.1
+    # via errbot
+idna==2.8
+    # via requests
+importlib-metadata==0.18
+    # via
+    #   pluggy
+    #   pytest
+itsdangerous==1.1.0
+    # via flask
+jinja2==2.10.1
+    # via
+    #   errbot
+    #   flask
+markdown==2.6.11
+    # via errbot
+markupsafe==1.1.1
+    # via jinja2
+more-itertools==7.2.0
+    # via pytest
+packaging==19.0
+    # via pytest
+pluggy==0.12.0
+    # via pytest
+py==1.8.0
+    # via pytest
+pycparser==2.19
+    # via cffi
 pygithub==1.43.8
-pygments-markdown-lexer==0.1.0.dev39  # via errbot
-pygments==2.4.2           # via errbot, pygments-markdown-lexer
-pyjwt==1.7.1              # via pygithub
-pyopenssl==19.0.0         # via errbot
-pyparsing==2.4.1.1        # via packaging
+    # via -r requirements.in
+pygments-markdown-lexer==0.1.0.dev39
+    # via errbot
+pygments==2.7.4
+    # via
+    #   errbot
+    #   pygments-markdown-lexer
+pyjwt==1.7.1
+    # via pygithub
+pyopenssl==19.0.0
+    # via errbot
+pyparsing==2.4.1.1
+    # via packaging
 pytest-cov==2.7.1
-pytest==5.0.1             # via pytest-cov
-requests==2.22.0          # via codecov, errbot, pygithub
-six==1.12.0               # via cryptography, packaging, pyopenssl, webtest
-soupsieve==1.9.2          # via beautifulsoup4
-urllib3==1.25.3           # via dulwich, requests
-waitress==1.4.0           # via webtest
-wcwidth==0.1.7            # via pytest
-webob==1.8.5              # via webtest
-webtest==2.0.33           # via errbot
-werkzeug==0.15.5          # via flask
-wrapt==1.11.2             # via deprecated
-zipp==0.5.2               # via importlib-metadata
+    # via -r requirements.in
+pytest==5.0.1
+    # via pytest-cov
+requests==2.22.0
+    # via
+    #   codecov
+    #   errbot
+    #   pygithub
+six==1.12.0
+    # via
+    #   cryptography
+    #   packaging
+    #   pyopenssl
+    #   webtest
+soupsieve==1.9.2
+    # via beautifulsoup4
+urllib3==1.25.3
+    # via
+    #   dulwich
+    #   requests
+waitress==1.4.0
+    # via webtest
+wcwidth==0.1.7
+    # via pytest
+webob==1.8.5
+    # via webtest
+webtest==2.0.33
+    # via errbot
+werkzeug==0.15.5
+    # via flask
+wrapt==1.11.2
+    # via deprecated
+zipp==0.5.2
+    # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
 # setuptools
